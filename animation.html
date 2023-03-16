@@ -7,18 +7,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animationst</title>
     <style>
-        .stage {
-            width: 700px;
-            height: 380px;
-            border: 1px solid;
-            background-color: lightblue;
+        @keyframes sliding {
+            0% {
+                background-color: chartreuse;
+                left: 0px;
+                top: 0px;
+            }
+
+            25% {
+                background-color: brown;
+                top: 275px;
+                transform: scale(0.5);
+
+            }
+
+            50% {
+                background-color: goldenrod;
+                top: 0px;
+
+            }
+
+            75% {
+                background-color: chocolate;
+                top: 275px;
+                transform: scale(0.5);
+
+            }
+
+            100% {
+                background-color: blueviolet;
+                left: 600px;
+                top: 0;
+            }
         }
 
-        .ball {
+        .stage {
+            border: 2px dotted gray;
+            background-color: rgb(103, 176, 201);
+            width: 630px;
+            height: 295px;
+            border: 1px solid;
+        }
+
+        .stage:hover .ball {
+            color: white;
             width: 30px;
             height: 30px;
             border-radius: 15px;
+            position: relative;
             background-color: lightgreen;
+            animation: sliding 2s ease-in-out 0.5s 2 alternate;
+            animation-play-state: running;
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+
+
+
         }
     </style>
 </head>
